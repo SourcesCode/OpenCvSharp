@@ -9,10 +9,11 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>OpenCvSharp</RootNamespace>
     <AssemblyName>OpenCvSharp</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -23,6 +24,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,6 +34,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="OpenCvSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6adad1e807fea099, processorArchitecture=MSIL">
@@ -61,14 +64,52 @@
     <Compile Include="Core\FaceHelper.cs" />
     <Compile Include="Core\OpencvHelper.cs" />
     <Compile Include="Core\PeopleSampleModel.cs" />
+    <Compile Include="Core\FilePath.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Core\ISample.cs" />
+    <Compile Include="Core\MyProcess.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Samples\BgSubtractorMOG.cs" />
+    <Compile Include="Samples\BinarizerSample.cs" />
+    <Compile Include="Samples\BRISKSample.cs" />
+    <Compile Include="Samples\CaffeSample.cs" />
+    <Compile Include="Samples\ClaheSample.cs" />
+    <Compile Include="Samples\ConnectedComponentsSample.cs" />
+    <Compile Include="Samples\DFT.cs" />
+    <Compile Include="Samples\FaceDetection.cs" />
+    <Compile Include="Samples\FASTSample.cs" />
+    <Compile Include="Samples\FlannSample.cs" />
+    <Compile Include="Samples\FREAKSample.cs" />
+    <Compile Include="Samples\HistSample.cs" />
+    <Compile Include="Samples\HOGSample.cs" />
+    <Compile Include="Samples\HoughLinesSample.cs" />
+    <Compile Include="Samples\KAZESample.cs" />
+    <Compile Include="Samples\KAZESample2.cs" />
+    <Compile Include="Samples\MatOperations.cs" />
+    <Compile Include="Samples\MatToBitmap.cs" />
+    <Compile Include="Samples\MDS.cs" />
+    <Compile Include="Samples\MergeSplitSample.cs" />
+    <Compile Include="Samples\MorphologySample.cs" />
+    <Compile Include="Samples\MSERSample.cs" />
+    <Compile Include="Samples\NormalArrayOperations.cs" />
+    <Compile Include="Samples\PhotoMethods.cs" />
+    <Compile Include="Samples\PixelAccess.cs" />
+    <Compile Include="Samples\SeamlessClone.cs" />
+    <Compile Include="Samples\SiftSurfSample.cs" />
+    <Compile Include="Samples\SolveEquation.cs" />
+    <Compile Include="Samples\StarDetectorSample.cs" />
+    <Compile Include="Samples\Stitching.cs" />
+    <Compile Include="Samples\Subdiv2DSample.cs" />
+    <Compile Include="Samples\SuperResolutionSample.cs" />
+    <Compile Include="Samples\SVMSample.cs" />
+    <Compile Include="Samples\VideoCaptureSample.cs" />
+    <Compile Include="Samples\VideoWriterSample.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -80,7 +121,9 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="app.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
