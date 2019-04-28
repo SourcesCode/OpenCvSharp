@@ -297,6 +297,7 @@ namespace OpenCvSharp
             }
             catch (Exception ex)
             {
+                MessageBox.Show(ex.Message);
             }
 
             imageList1.Images.Add(frameimage);

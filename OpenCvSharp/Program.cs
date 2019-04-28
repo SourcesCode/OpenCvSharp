@@ -14,10 +14,10 @@ namespace OpenCvSharp
         [STAThread]
         static void Main()
         {
-            Test();
-            //Application.EnableVisualStyles();
-            //Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Form1());
+            //Test();
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Form1());
         }
 
         private static void Test()
