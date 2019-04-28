@@ -98,7 +98,6 @@
     <Compile Include="Samples\MorphologySample.cs" />
     <Compile Include="Samples\MSERSample.cs" />
     <Compile Include="Samples\NormalArrayOperations.cs" />
-    <Compile Include="Samples\VideoCaptureRtspSample.cs" />
     <Compile Include="Samples\PhotoMethods.cs" />
     <Compile Include="Samples\PixelAccess.cs" />
     <Compile Include="Samples\SeamlessClone.cs" />
@@ -109,6 +108,7 @@
     <Compile Include="Samples\Subdiv2DSample.cs" />
     <Compile Include="Samples\SuperResolutionSample.cs" />
     <Compile Include="Samples\SVMSample.cs" />
+    <Compile Include="Samples\VideoCaptureRtspSample.cs" />
     <Compile Include="Samples\VideoCaptureSample.cs" />
     <Compile Include="Samples\VideoWriterSample.cs" />
     <EmbeddedResource Include="Form1.resx">
