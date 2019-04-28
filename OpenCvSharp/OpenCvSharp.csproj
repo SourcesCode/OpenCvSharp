@@ -98,6 +98,7 @@
     <Compile Include="Samples\MorphologySample.cs" />
     <Compile Include="Samples\MSERSample.cs" />
     <Compile Include="Samples\NormalArrayOperations.cs" />
+    <Compile Include="Samples\VideoCaptureRtspSample.cs" />
     <Compile Include="Samples\PhotoMethods.cs" />
     <Compile Include="Samples\PixelAccess.cs" />
     <Compile Include="Samples\SeamlessClone.cs" />
