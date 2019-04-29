@@ -184,6 +184,51 @@ namespace OpenCvSharp.Core
 
         }
 
+        /// <summary>
+        /// 利用直方图比较两张图片的相似度
+        /// </summary>
+        /// <param name="src1"></param>
+        /// <param name="src2"></param>
+        /// <returns></returns>
+        public static bool CompareHist(Mat src1, Mat src2)
+        {
+            Mat matDst1, matDst2, matGray1, matGray2;
+            Size imageSize = new Size(100, 100);
+            matDst1 = new Mat();
+            matDst2 = new Mat();
+
+            matGray1 = new Mat();
+            matGray2 = new Mat();
+            if (src1.Channels() == 3)
+                Cv2.CvtColor(src1, matGray1, ColorConversionCodes.RGB2GRAY);
+            if (src2.Channels() == 3)
+                Cv2.CvtColor(src2, matGray2, ColorConversionCodes.RGB2GRAY);
+
+            Cv2.Resize(src1, matDst1, imageSize, 0, 0, InterpolationFlags.Cubic);
+            Cv2.Resize(src2, matDst2, imageSize, 0, 0, InterpolationFlags.Cubic);
+
+            int[] histSize = { 256 };
+            Rangef histRange = new Rangef(0, 256);
+            Rangef[] ranges = { histRange };
+
+            Mat hist1 = new Mat();
+            Mat hist2 = new Mat();
+
+            //calcHist(&matDst1, 1, 0, Mat(), hist1, 1, &histSize, &histRange, 1, 0);
+            Cv2.CalcHist(new[] { matDst1 }, new[] { 1, 0 }, new Mat(), hist1, 1, histSize, ranges, true, false);
+            //normalize(hist1, hist1, 0, 1, NORM_MINMAX, -1, Mat());
+            Cv2.Normalize(hist1, hist1, 0, 1, NormTypes.MinMax, -1, new Mat());
+
+            //calcHist(&matDst2, 1, 0, Mat(), hist2, 1, &histSize, &histRange, 1, 0);
+            Cv2.CalcHist(new[] { matDst2 }, new[] { 1, 0 }, new Mat(), hist2, 1, histSize, ranges, true, false);
+            //normalize(hist2, hist2, 0, 1, NORM_MINMAX, -1, Mat());
+            Cv2.Normalize(hist2, hist2, 0, 1, NormTypes.MinMax, -1, new Mat());
+            //利用直方图比较两张图片的相似度。
+            double Similarity = Cv2.CompareHist(hist1, hist2, HistCompMethods.Correl);
+            return Similarity > 0.6;
+        }
+
+
         #region Recognizer
         /* 
          * 

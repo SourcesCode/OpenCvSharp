@@ -65,8 +65,13 @@
     <Compile Include="Core\CommonResult.cs" />
     <Compile Include="Core\FaceHelper.cs" />
     <Compile Include="Core\HttpHelper.cs" />
+    <Compile Include="ExtendApi\Dtos\AddFaceRequest.cs" />
+    <Compile Include="ExtendApi\Dtos\CompareRequest.cs" />
     <Compile Include="ExtendApi\Dtos\DetectRequest.cs" />
     <Compile Include="ExtendApi\Dtos\DetectResponse.cs" />
+    <Compile Include="ExtendApi\Dtos\SearchRequest.cs" />
+    <Compile Include="ExtendApi\Dtos\SearchResponse.cs" />
+    <Compile Include="ExtendApi\Dtos\SetFaceUserIdRequest.cs" />
     <Compile Include="ExtendApi\FacePlusPlusApiHelper.cs" />
     <Compile Include="ExtendApi\FacePlusPlusApiHelperUnitTest.cs" />
     <Compile Include="Core\OpencvHelper.cs" />

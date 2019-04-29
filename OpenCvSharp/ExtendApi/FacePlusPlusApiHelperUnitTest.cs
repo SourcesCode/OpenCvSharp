@@ -8,7 +8,7 @@ namespace OpenCvSharp.ExtendApi
         //[TestMethod]
         public void TestDetect()
         {
-            DetectRequest request = new DetectRequest
+            var request = new DetectRequest
             {
                 ImageFilePath = "tmp/1.jpg"
             };
@@ -24,13 +24,24 @@ namespace OpenCvSharp.ExtendApi
         //[TestMethod]
         public void TestAddFace()
         {
-            var result = FacePlusPlusApiHelper.AddFace();
+            var request = new AddFaceRequest
+            {
+                FaceSetToken = "1da59b4c728cadb43092bfa0cdfa4b76",
+                FaceTokens = ""
+            };
+            var result = FacePlusPlusApiHelper.AddFace(request);
         }
 
         //[TestMethod]
         public void TestSearch()
         {
-            var result = FacePlusPlusApiHelper.Search();
+            var request = new SearchRequest
+            {
+                FaceSetToken = "1da59b4c728cadb43092bfa0cdfa4b76",
+                FaceToken = ""
+                //ImageFilePath = "tmp/1.jpg"
+            };
+            var result = FacePlusPlusApiHelper.Search(request);
         }
 
 
