@@ -1,4 +1,6 @@
-﻿namespace OpenCvSharp.ExtendApi
+﻿using OpenCvSharp.ExtendApi.Dtos;
+
+namespace OpenCvSharp.ExtendApi
 {
     //[TestClass]
     public class FacePlusPlusApiHelperUnitTest //: BaseUnitTest
@@ -6,7 +8,11 @@
         //[TestMethod]
         public void TestDetect()
         {
-            var result = FacePlusPlusApiHelper.Detect();
+            DetectRequest request = new DetectRequest
+            {
+                ImageFilePath = "tmp/1.jpg"
+            };
+            var result = FacePlusPlusApiHelper.Detect(request);
         }
 
         //[TestMethod]
