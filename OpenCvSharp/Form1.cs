@@ -130,7 +130,7 @@ namespace OpenCvSharp
         private void Form1_Load(object sender, EventArgs e)
         {
             ListVideoDevices();
-            cascade = new CascadeClassifier("face.xml");
+            cascade = new CascadeClassifier("haarcascade_frontalface_default.xml");
             initialise_capture(0);
             newlyloaded = false;
 
