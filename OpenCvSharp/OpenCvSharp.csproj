@@ -62,6 +62,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\FaceHelper.cs" />
+    <Compile Include="Core\HttpHelper.cs" />
+    <Compile Include="ExtendApi\FacePlusPlusApiHelper.cs" />
+    <Compile Include="ExtendApi\FacePlusPlusApiHelperUnitTest.cs" />
     <Compile Include="Core\OpencvHelper.cs" />
     <Compile Include="Core\PeopleSampleModel.cs" />
     <Compile Include="Core\FilePath.cs" />
