@@ -51,6 +51,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -61,13 +62,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\CommonResult.cs" />
     <Compile Include="Core\FaceHelper.cs" />
     <Compile Include="Core\HttpHelper.cs" />
+    <Compile Include="ExtendApi\Dtos\AddFaceRequest.cs" />
+    <Compile Include="ExtendApi\Dtos\CompareRequest.cs" />
+    <Compile Include="ExtendApi\Dtos\DetectRequest.cs" />
+    <Compile Include="ExtendApi\Dtos\DetectResponse.cs" />
+    <Compile Include="ExtendApi\Dtos\SearchRequest.cs" />
+    <Compile Include="ExtendApi\Dtos\SearchResponse.cs" />
+    <Compile Include="ExtendApi\Dtos\SetFaceUserIdRequest.cs" />
     <Compile Include="ExtendApi\FacePlusPlusApiHelper.cs" />
     <Compile Include="ExtendApi\FacePlusPlusApiHelperUnitTest.cs" />
     <Compile Include="Core\OpencvHelper.cs" />
     <Compile Include="Core\PeopleSampleModel.cs" />
     <Compile Include="Core\FilePath.cs" />
+    <Compile Include="ExtendApi\HttpHelper4MultipartForm.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,7 +153,11 @@
     <Content Include="face.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="haarcascade_frontalface_default.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
